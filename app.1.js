@@ -18,13 +18,7 @@ const server = http.createServer((request, response) => {
       console.log(err);
     });
 
-    response.statusCode = 200;
-    response.setHeader('Content-Type', 'application/json');
-
-    const responseBody = { headers, method, url, body };
-
-    response.write(JSON.stringify(responseBody));
-    response.end();
+    response.end(body);
   });
 
   // response.statusCode = 200;
