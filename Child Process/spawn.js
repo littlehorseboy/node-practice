@@ -18,4 +18,4 @@ const processFunc = (commandList) => {
   });
 };
 
-processFunc(['dir', 'dir']);
+processFunc(['npm -v', 'npm -v']);
