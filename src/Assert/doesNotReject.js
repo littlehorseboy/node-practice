@@ -6,7 +6,7 @@ const assert = require('assert');
   await assert.doesNotReject(
     async () => {
       throw new TypeError('Wrong value');
-    }, SyntaxError
+    }, SyntaxError,
   );
 })();
 

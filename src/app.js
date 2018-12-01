@@ -1,4 +1,4 @@
-const http= require('http');
+const http = require('http');
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -6,7 +6,7 @@ const port = 3000;
 const server = http.createServer((request, response) => {
   const { headers, method, url } = request;
   let body = [];
-  
+
   request.on('error', (err) => {
     console.log(err);
   }).on('data', (chunk) => {
@@ -21,7 +21,12 @@ const server = http.createServer((request, response) => {
     response.statusCode = 200;
     response.setHeader('Content-Type', 'application/json');
 
-    const responseBody = { headers, method, url, body };
+    const responseBody = {
+      headers,
+      method,
+      url,
+      body,
+    };
 
     response.write(JSON.stringify(responseBody));
     response.end();

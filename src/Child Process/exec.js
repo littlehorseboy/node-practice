@@ -1,26 +1,24 @@
 const request = require('request');
 const { exec } = require('child_process');
 
-// exec('git add . && git commit -m "feat: exec && todo: && issue exec"', (err, stdout, stderr) => {
-//   if (err) {
-//     console.error(err);
-//     return;
-//   }
+exec('git add . && git commit -m "feat: exec && todo: && issue exec"', (err, stdout, stderr) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
 
-//   if (stdout) {
-//     console.log(`stdout: ${stdout}`);
-//   }
+  if (stdout) {
+    console.log(`stdout: ${stdout}`);
+  }
 
-//   if (stderr) {
-//     console.log(`stderr: ${stderr}`);
-//   }
-// });
+  if (stderr) {
+    console.log(`stderr: ${stderr}`);
+  }
+});
 
-function callback(error, response, body) {
-  if (!error && response.statusCode == 200) {
-    var info = JSON.parse(body);
-    console.log(info.stargazers_count + " Stars");
-    console.log(info.forks_count + " Forks");
+function callback(error, response) {
+  if (!error && response.statusCode === 200) {
+    console.log(response.statusMessage);
   }
 }
 

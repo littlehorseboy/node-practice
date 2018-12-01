@@ -1,10 +1,8 @@
 const request = require('request');
 
-function callback(error, response, body) {
-  if (!error && response.statusCode == 200) {
-    var info = JSON.parse(body);
-    console.log(info.stargazers_count + " Stars");
-    console.log(info.forks_count + " Forks");
+function callback(error, response) {
+  if (!error && response.statusCode === 200) {
+    console.log(response.statusMessage);
   }
 }
 

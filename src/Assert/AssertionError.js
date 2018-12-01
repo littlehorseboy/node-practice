@@ -1,7 +1,7 @@
 const assert = require('assert');
 
 const {
-  message
+  message,
 } = new assert.AssertionError({
   actual: 1,
   expected: 2,
