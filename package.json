@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/littlehorseboy/node-practice#readme",
   "dependencies": {
+    "immutable": "^4.0.0-rc.12",
     "request": "^2.88.0"
   },
   "devDependencies": {
